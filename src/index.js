@@ -3,10 +3,30 @@ function eval() {
     return;
 }
 
+function validParentheses(braces) {
+    var sum = 0;
+    if (braces[0] == "}" || braces[0] == "]" || braces[0] == ")") return false;
+    var map = { "{": "}", "[": "]", "(": ")" };
+    for (var i = 0; i < braces.length; i++) {
+        var q = map[arr[arr.length - 1]];
+        var qq = braces[i];
+        if (braces[i] == "{" || braces[i] == "[" || braces[i] == "(") {
+            sum++;
+        }
+        else if (map[arr[arr.length - 1]] == braces[i]) {
+            sum--;
+        }
+    }
+
+    if (sum == 0) return true;
+
+    return false;
+}
+
 function expressionCalculator(expr) {
     var arr = [];
     var num = "";
- 
+    if (!validParentheses(expr)) { throw ("ExpressionError: Brackets must be paired");}
     for (var i = 0; i < expr.length; i++) {
         if (parseInt(expr[i]) || (parseInt(expr[i]) == 0 && expr[i] != " ")) {
             while (parseInt(expr[i]) || (parseInt(expr[i]) == 0 && expr[i] !=" ") ) {
