@@ -5,15 +5,12 @@ function eval() {
 
 function validParentheses(braces) {
     var sum = 0;
-    if (braces[0] == "}" || braces[0] == "]" || braces[0] == ")") return false;
-    var map = { "{": "}", "[": "]", "(": ")" };
+    if (braces[0] == ")") return false;
     for (var i = 0; i < braces.length; i++) {
-        var q = map[arr[arr.length - 1]];
-        var qq = braces[i];
-        if (braces[i] == "{" || braces[i] == "[" || braces[i] == "(") {
+        if (braces[i] == "(") {
             sum++;
         }
-        else if (map[arr[arr.length - 1]] == braces[i]) {
+        else if (braces[i] ==")") {
             sum--;
         }
     }
