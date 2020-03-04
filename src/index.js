@@ -21,6 +21,11 @@ function expressionCalculator(expr) {
         }
     }
 
+    return calcul(arr);
+    
+}
+
+function calcul(arr) {
     while (arr.length != 1) {
         var ind;
         var exp;
@@ -28,7 +33,7 @@ function expressionCalculator(expr) {
             if (arr.indexOf("*") != -1 && arr.indexOf("/") != -1) {
                 exp = arr.indexOf("*") < arr.indexOf("/") ? "*" : "/";
             }
-            else if (arr.indexOf("*") != -1 ) {
+            else if (arr.indexOf("*") != -1) {
                 exp = "*";
             }
             else {
@@ -41,7 +46,7 @@ function expressionCalculator(expr) {
                 case "*":
                     var mul = parseFloat(arr[ind - 1]) * parseFloat(arr[ind + 1]);
                     arr.splice(ind - 1, 0, mul);
-                     arr.splice(ind, 3);
+                    arr.splice(ind, 3);
                     break;
                 case "/":
                     var div = parseFloat(arr[ind - 1]) / parseFloat(arr[ind + 1]);
