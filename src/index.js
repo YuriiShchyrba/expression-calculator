@@ -49,7 +49,7 @@ function calcul(arr) {
                     arr.splice(ind, 3);
                     break;
                 case "/":
-                    if (arr[ind + 1]==0) return throw new Error("Test division by zero");
+                    if (arr[ind + 1]==0) throw new Error("Test division by zero");
                     var div = parseFloat(arr[ind - 1]) / parseFloat(arr[ind + 1]);
                     arr.splice(ind - 1, 0, div);
                     arr.splice(ind, 3);
