@@ -38,9 +38,11 @@ function makearray(expr,index) {
     var arr = [];
     var num = "";
     for (index[0]; index[0] < expr.length; index[0]++) {
-        if (expr[index[0]] == "(") {
-            var a = q.substring(index[0] + 1, q.length - index[0]);
-            arr.push(makearray(a, index));
+         if (expr[index[0]] == "(") {
+             var a = q.substring(index[0] + 1, q.length);
+             var i = [0]
+             arr.push(makearray(a, i));
+             index[0] += i[0];
             continue;
         }
         
